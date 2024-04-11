@@ -171,8 +171,8 @@ section {
 
 .section__pic-container {
   display: flex;
-  height: 400px;
-  width: 400px;
+  height: 275px;
+  width: 275px;
   margin: auto 0;
 }
 
@@ -202,8 +202,9 @@ section {
 #socials-container {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 0rem;
   gap: 1rem;
+  padding-top: 0rem;
 }
 
 /* ICONS */
@@ -259,7 +260,15 @@ section {
 
 .btn-container {
   gap: 1rem;
+  padding: 1rem;
 }
+
+.role {
+  font-family: 'Your Custom Font', sans-serif; /* Replace 'Your Custom Font' with the name of the font you want to use */
+  font-size: 30px; /* Adjust the font size as needed */
+  color: #333; /* Set the color of the role text */
+}
+
 
 /* ABOUT SECTION */
 
@@ -270,8 +279,10 @@ section {
 .about-containers {
   gap: 2rem;
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
+  padding-top: 0;
 }
+
 
 .about-details-container {
   justify-content: center;
@@ -313,6 +324,7 @@ section {
   width: 400px;
   margin: auto 0;
 }
+
 /* EXPERIENCE AND PROJECTS SECTION CONTAINER */
 #experience-projects-container {
   display: flex;
@@ -431,7 +443,14 @@ section {
 
 #projects {
   position: relative;
+  padding-top: 1vh;
+  height: auto; /* Change the height to auto */
+  margin: 10rem 10rem 0; /* Add margin to the top and bottom */
+  box-sizing: border-box;
+  min-height: fit-content;
 }
+
+
 
 .color-container {
   border-color: rgb(163, 163, 163);
@@ -439,9 +458,9 @@ section {
 }
 
 .project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  width: 100%; /* Set the width to 100% */
+  height: auto; /* Automatically adjust the height */
+  border-radius: 1rem;
 }
 
 .project-title {
@@ -491,6 +510,13 @@ section {
   padding: 0; /* Remove default padding */
   margin-left: 0;
 }
+
+.article-container {
+  width: 100%; /* Set the width to 100% */
+  height: 400px; /* Set a fixed height for the container */
+  overflow: hidden; /* Hide any overflow */
+} 
+
 /* CONTACT */
 
 #contact {
@@ -498,6 +524,7 @@ section {
   justify-content: center;
   flex-direction: column;
   height: 70vh;
+  margin-top: 20rem; /* Add margin to the top */
 }
 
 .contact-info-upper-container {
@@ -506,29 +533,63 @@ section {
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
-  margin: 2rem auto;
-  padding: 0.5rem;
+  background: #fafafa; /* Fix the background value */
+  margin: 3rem auto;
+  padding: 1.5rem;
+  position: relative; /* Add this line */
+  flex-basis: 10%; /* Adjust the width of each article as needed */
+  gap: 100px;
+}
+.contact-info-upper-container article {
+  flex-basis: 100%; /* Adjust the width of each article as needed */
 }
 
 .contact-info-container {
   display: flex;
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text horizontally */
+  width: 10rem; /* Adjust as needed */
+  padding: 1rem;
+}
+
+
+.contact-info-container img {
+  width: 50px; /* Adjust the width of the images as needed */
+}
+
+.contact-info-container p {
+  margin: 0; /* Reset default margin */
+}
+
+.contact-icon {
+  cursor: pointer;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Let the height adjust accordingly */
+}
+
+
+.email-icon {
+  position: absolute; /* Add this line */
+}
+.email-info { /* Added class for email */
+  text-align: center; /* Center text horizontally */
+}
+
+.linkedin-info { /* Added class for LinkedIn */
+  text-align: center; /* Center text horizontally */
+}
+.location-info { /* Added class for LinkedIn */
+  text-align: center; /* Center text horizontally */
 }
 
 .contact-info-container p {
   font-size: larger;
-}
-
-.contact-icon {
-  cursor: default;
-}
-
-.email-icon {
-  height: 2.5rem;
+  margin: 0; /* Reset margin */
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center; /* Center the articles horizontally */
 }
 
 /* FOOTER SECTION */

@@ -1,13 +1,15 @@
 @media screen and (max-width: 1400px) {
   #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
+    height: 10vh;
+    margin-bottom: 1rem;
   }
   .about-containers {
     flex-wrap: wrap;
   }
+  #projects {
+    margin-top: 10rem; /* Adjusted margin for better spacing */
+  }
 }
-
 @media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
@@ -31,7 +33,7 @@
     height: fit-content;
   }
   section {
-    margin: 0 5%;
+    margin: 0.5%;
   }
   .section__pic-container {
     width: 275px;
@@ -44,12 +46,22 @@
 }
 
 @media screen and (max-width: 600px) {
-  #contact,
+  #contact{
+  height: 10vh;
+  margin-top: 20rem;
+  }
+  section,
+  .section-contact-info-upper-container {
+    height: fit-content;
+  }
+  section {
+    margin: 1%;
+  }
   footer {
-    height: 40vh;
+    height: vh;
   }
   #profile {
-    height: 83vh;
+    height: 120vh;
     margin-bottom: 0;
   }
   article {
@@ -72,7 +84,7 @@
     font-size: 1rem;
   }
   .experience-sub-title {
-    font-size: 1.25rem;
+    font-size: 7rem;
   }
   .logo {
     font-size: 1.5rem;
@@ -96,4 +108,15 @@
   .text-container {
     text-align: justify;
   }
+}
+@media screen and (max-width: 375px) {
+  #profile {
+    height: 150vh;
+    margin-bottom: 6rem;
+  }
+  #contact,
+  footer {
+    height: 40vh;
+
+  /* Other CSS rules specific to iPhone SE */
 }

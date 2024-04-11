@@ -43,12 +43,9 @@
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Akriti Machhan</h1>
-        <p class="section__text__p2">Project Developer</p>
+        <p class="role"></p>
         <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/AkritiMachhan_CV.pdf')"
-          >
+          <button class="btn btn-color-2" onclick="window.open('./assets/AkritiMachhan_CV.pdf')">
             Download CV
           </button>
           <button class="btn btn-color-1" onclick="location.href='./#contact'">
@@ -65,6 +62,47 @@
         </div>
       </div>
     </section>
+    
+    <script>
+      // Define the roles
+      const roles = [
+        'Project Developer',
+        'Structural Engineer',
+        'ModHouse Consultant'
+      ];
+    
+      // Get the role element
+      const roleElement = document.querySelector('.role');
+    
+      // Initialize role index
+      let roleIndex = 0;
+    
+      // Initialize letter index
+      let letterIndex = 0;
+    
+      // Function to display the current role
+      function displayRole() {
+        roleElement.textContent = roles[roleIndex].slice(0, letterIndex);
+      }
+    
+      // Display the initial role
+      displayRole();
+    
+      // Function to increment letter index and display role
+      function nextLetter() {
+        letterIndex++;
+        if (letterIndex <= roles[roleIndex].length) {
+          displayRole();
+        } else {
+          roleIndex = (roleIndex + 1) % roles.length;
+          letterIndex = 0;
+        }
+      }
+    
+      // Start typing effect
+      setInterval(nextLetter, 150); // Change letter every 150 milliseconds
+    </script>
+    
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
@@ -73,7 +111,7 @@
           <img
             src="./assets/Photo.jpg"
             alt="Profile picture"
-            class="akriti_pic2"
+            class="about-pic"
           />
         </div>
         <div class="about-details-container">
@@ -85,8 +123,20 @@
                 class="icon"
               />
               <h3>Experience</h3>
-              <p>2+ years <br />Project Developer</p>
-              <p>1.5 years <br />Junior Structural Engineer</p>
+              <p>
+                <strong>Project Developer</strong><br>
+                <em>Semodu.Ag</em><br>
+                <em>Berlin</em><br>
+                <em>Duration</em>: 2+ years
+              </p>
+              <p>
+                <strong>Junior Structural Engineer</strong><br>
+                <em>Intelligent Consulting Engineers (ICE)</em><br>
+                <em>India</em><br>
+                <em>Duration</em>: 1.9 years
+              </p>
+              
+                          
             </div>
             <div class="details-container">
               <img
@@ -95,7 +145,16 @@
                 class="icon"
               />
               <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
+              <div>
+                <p><strong>Bachelor of Science in Civil Engineering</strong></p>
+                <p><em>India</em></p>
+                <p>Graduated: [2017]</p>
+              </div>
+              <div>
+                <p><strong>Master of Science in Construction and Real Estate Management</strong></p>
+                <p><em>Germany</em></p>
+                <p>Graduated: [2022]</p>
+              </div>
             </div>
           </div>
           <div class="text-container">
@@ -345,9 +404,9 @@
       </div>
       <div class="experience-details-container2">
         <div class="about-containers">
-          <div class="details-container">
+          <div class="details-container2">
             <h2 class="experience-sub-title2">Languages</h2>
-            <div class="article-container">
+            <div class="article-container2">
               <article>
                 <img
                   src="./assets/checkmark.png"
@@ -390,12 +449,12 @@
       <div class="details-container3">
         <h2 class="experience-sub-title2">Other Skills or Certifications</h2>
         <ul class="skills-list">
-          <li><strong>Strong Communication Skills</strong></li>
-          <li><strong>Good Knowledge of HOAI; VOB/B</strong></li>
-          <li><strong>Proficient in Building Information Modeling (BIM)</strong></li>
-          <li><strong>Data Analytics Bootcamp Certificated</strong></li>
-          <li><strong>Problem Solving</strong></li>
-          <li><strong>Temawork</strong></li>
+          <p>Strong Communication Skills<p>
+          <p>Good Knowledge of HOAI; VOB/B<p>
+          <p>Proficient in Building Information Modeling (BIM)<p>
+          <p>Data Analytics Bootcamp Certificated<p>
+          <p>Problem Solving<p>
+          <p>Temawork<p>
         </ul>
       </div>
     </div>    
@@ -406,87 +465,117 @@
         onclick="location.href='./#projects'"
       />
     </section>
-    <section id="projects">
+    <section id="projects"style="height: 200vh;">
         <p class="section__text__p1">Browse My Recent</p>
         <h1 class="title">Projects</h1>
         <div class="experience-details-container">
             <div class="about-containers">
                 <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/Schwerin.jpg" alt="Project 1" class="project-img" />
+                   <div class="article-container">
+                       <img src="./assets/Schwerin.jpg" alt="Project 1" class="project-img" />
                     </div>
-                    <h2 class="experience-sub-title4">Schwerin</h2>
+                    <h2 class="experience-sub-title4">Urban Development in Schwerin</h2>
                     <div class="text-container">
                         <p>
-                          A comprehensive urban development project is underway in Schwerin, focusing on enhancing the Neu-Zippendorf neighborhood. The project aims to revitalize the area, catering to the needs of both the city and its residents. The envisioned outcome is a vibrant and diverse urban quarter that sets new standards for quality living.
+                          In Schwerin's Neu Zippendorf district, the property at Magdeburger Strasse 20 spans 19,563 square meters, just 7 kilometers from the city center. Planned for residential and retail use, its orientation towards Berliner Platz adds to its appeal. With 6 buildings, it offers significant development potential, with a maximum building storey of 7 and a height limit of 20 meters. The floor area totals 22,221 square meters, including 6,533 square meters for retail, maximizing land use efficiency. Accessibility is ensured by three access points and approximately 132 parking spaces, making it an attractive prospect for investors and developers.
                         </p>
+                        <p>Within this project, I played a central role in overseeing various aspects of development. From conducting meticulous due diligence to analyzing location feasibility and market value, my contributions were instrumental in shaping the project's trajectory. Furthermore, I facilitated collaboration with regulatory bodies for B Plan compliance, ensuring adherence to standards and regulations.
                     </div>
-                    <a href="project_schwerin_details.html" class="read-more-link">Read More</a>
-                    <div class="experience-in-project-container">
-                      <h2 class="experience-sub-title5">My Experience in the Project</h2>
-                      <ul class="project-experience-list">
-                          <li>Project Coordination</li>
-                          <li>Stakeholder Engagement</li>
-                          <li>Regulatory Compliance</li>
-                          <li>Risk Management</li>
-                          <li>Documentation and Reporting</li>
-                          <li>Project Execution</li>
-                      </ul>
-                    </div>
+
                 </div>
                 <div class="details-container color-container">
                   <div class="article-container">
                       <img src="./assets/köpnick.jpg" alt="Project 1" class="project-img" />
                   </div>
-                  <h2 class="experience-sub-title4">köpnick</h2>
+                  <h2 class="experience-sub-title4">Design and Planning of Residential Developments</h2>
                   <div class="text-container">
                       <p>
-                        Located in the heart of Berlin's Köpenick district, our development in Waldstrasse epitomizes the charm of small-town living while offering the conveniences of city life. Comprising five detached town villas nestled within an attractive residential neighborhood, each villa boasts a spacious 400 m² plot of land. These residences are meticulously crafted using modular timber construction techniques and are designed to meet high-quality standards
-                      </p>
+                          Nestled in Berlin-Köpenick, the Waldstrasse residential project spans 2,042 m² of land, offering around 700 m² of living spaces and a total gross floor area (BGF) of approximately 835 m². Comprising five detached town villas, each blending small-town charm with urban convenience, this development redefines modern urban living.
+                      </p> 
+                      <p>Playing a pivotal role in the project, I spearheaded initiatives such as due diligence, location feasibility studies, and market value analysis. Additionally, I ensured seamless coordination with stakeholders and regulatory bodies to maintain compliance with standards and regulations.</p>
                   </div>
-                  <a href="project_schwerin_details.html" class="read-more-link">Read More</a>
-                  <div class="experience-in-project-container" style="margin-left: 0; padding-left: 0;">
-                    <h2 class="experience-sub-title5">My Experience in the Project</h2>
-                      <ul class="project-experience-list">
-                          <li>Project Coordination</li>
-                          <li>Stakeholder Engagement</li>
-                          <li>Regulatory Compliance</li>
-                          <li>Risk Management</li>
-                          <li>Documentation and Reporting</li>
-                          <li>Project Execution</li>
-                      </ul>
-                  </div>
+                  
               </div>
             </div>
         </div>
+        <div class="experience-details-container">
+          <div class="about-containers">
+              <div class="details-container color-container">
+                 <div class="article-container">
+                    <img src="./assets/Module.jpg" alt="Project 1" class="project-img" />
+                  </div>
+                  <h2 class="experience-sub-title4">Modular Housing Consultants</h2>
+                  <div class="text-container">
+                      <p>
+                        In the initial phase of the Modular Housing Consultants project, my team and I focused on defining the project scope and assembling the necessary team. This involved compiling project data, identifying stakeholders, and planning timelines and responsibilities. Additionally, we conducted technical analyses on design specifications, logistics plans, and construction details to ensure feasibility and efficiency. Moving into other Phase , my team and I completed tender documents and analyzed proposals to make informed decisions. Throughout the process, collaboration within the team was crucial to ensure a solid foundation for the successful implementation of modular housing solutions.
+                      <p>
+                  </div>
+
+              </div>
+              <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="./assets/Anaylsis.png" alt="Project 1" class="project-img" />
+                </div>
+                <h2 class="experience-sub-title4">Design and Planning of Residential Developments</h2>
+                <div class="text-container">
+                    <p>
+                        Nestled in Berlin-Köpenick, the Waldstrasse residential project spans 2,042 m² of land, offering around 700 m² of living spaces and a total gross floor area (BGF) of approximately 835 m². Comprising five detached town villas, each blending small-town charm with urban convenience, this development redefines modern urban living.
+                    </p> 
+                    <p>Playing a pivotal role in the project, I spearheaded initiatives such as due diligence, location feasibility studies, and market value analysis. Additionally, I ensured seamless coordination with stakeholders and regulatory bodies to maintain compliance with standards and regulations.</p>
+                </div>
+                
+            </div>
+          </div>
+      </div>
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
         onclick="location.href='./#contact'"
-      />
+      /> 
     </section>
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:akriti.machhan1009@gmail.com">akriti.machhan1009@gmail.com</a></p>
+          <article>
+            <img
+              src="./assets/Location.png"
+              alt="Location icon"
+              class="icon contact-icon"
+            />
+            <div class="location-info">
+              <p><a class="address" href="#">Germany</a></p>
+            </div>
+          </article>
         </div>
         <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/AkritiMachhan">LinkedIn</a></p>
+          <article>
+            <img
+              src="./assets/email.png"
+              alt="Email icon"
+              class="icon contact-icon"
+            />
+            <div class="email-info"> <!-- Changed class name to match -->
+              <p><a href="mailto:akriti.machhan1009@gmail.com">Email</a></p> <!-- Added 'mailto:' -->
+            </div>
+          </article>
+        </div>
+        <div class="contact-info-container">
+          <article>
+            <img
+              src="./assets/linkedin.png"
+              alt="Linkedn icon"
+              class="icon contact-icon"
+            />
+            <div class="linkedin-info">
+              <p><a href="https://www.linkedin.com/in/AkritiMachhan">LinkedIn</a></p>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
     </section>
     <footer>
       <nav>
