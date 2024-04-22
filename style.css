@@ -9,14 +9,38 @@
 
 body {
   font-family: "Poppins", sans-serif;
+
 }
+
 
 html {
   scroll-behavior: smooth;
 }
 
 p {
-  color: rgb(85, 85, 85);
+  color: rgba(85, 85, 85, 0.781);
+}
+/* Background Video Styles */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
 }
 
 /* TRANSITION */
@@ -97,7 +121,7 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.656);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -158,6 +182,7 @@ section {
 
 .section-container {
   display: flex;
+  background-color: #ffffff00; 
 }
 
 /* PROFILE SECTION */
@@ -166,15 +191,23 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  height: 80vh;
+  height: 60vh;
+  margin-bottom: 15rem;
+  background-color: #ffffffb0; 
 }
 
 .section__pic-container {
   display: flex;
-  height: 275px;
-  width: 275px;
-  margin: auto 0;
+  height: 400px;
+  width: 400px;
 }
+.section__pic-container img {
+  border-radius: 0%;         /* Make the image round */
+  width: 70%;                /* Ensure the image takes up the full width of its container */
+  height: 100%;               /* Ensure the image takes up the full height of its container */
+  object-fit: cover; 
+  background-color: transparent; /* Ensure transparency */
+ }
 
 .section__text {
   align-self: center;
@@ -213,7 +246,10 @@ section {
   cursor: pointer;
   height: 2rem;
 }
-
+.icon1 {
+  cursor: pointer;
+  height: 2rem;
+}
 /* BUTTONS */
 
 .btn-container {
@@ -274,36 +310,31 @@ section {
 
 #about {
   position: relative;
+  background-color: hsla(0, 0%, 96%, 0.907); 
 }
-
+.section-container {
+  gap: 4rem;
+  height: 50%;
+  margin-top: 10rem;
+}
 .about-containers {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 0rem;
   padding-top: 0;
+  display: flex;
+  padding: 1rem;
 }
-
 
 .about-details-container {
   justify-content: center;
   flex-direction: column;
 }
-
-.about-containers,
-.about-details-container {
-  display: flex;
-}
-
-.about-pic {
-  border-radius: 2rem;
-}
-
 .arrow {
   position: absolute;
   right: -5rem;
   bottom: 2.5rem;
 }
-
 .details-container {
   padding: 1.5rem;
   flex: 1;
@@ -313,29 +344,55 @@ section {
   border-color: rgb(163, 163, 163);
   text-align: center;
 }
-
-.section-container {
-  gap: 4rem;
-  height: 80%;
+.section__pic-container1 {
+  display: flex;
+  height: 330px;
+  width: 500px;
+}
+.about-pic {
+  border-radius: 2rem;
+  margin-left: 5rem;
+}
+.text-container p{
+  text-align: justify;
+  margin-right: 1rem;
 }
 
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
+/* EXPERIENCE SECTION */
+#experience {
+  position: relative;
+  margin-top: 7rem; /* Add bottom margin to create space between Experience and Projects sections */
 }
-
 /* EXPERIENCE AND PROJECTS SECTION CONTAINER */
 #experience-projects-container {
   display: flex;
   flex-wrap: wrap; 
-  gap: 0rem; 
+  gap: 1rem; 
   margin-bottom: 0rem; /* Add bottom margin to create space between Experience and Projects sections */
 }
-/* EXPERIENCE SECTION */
-#experience {
-  position: relative;
-  margin-bottom: 0rem; /* Add bottom margin to create space between Experience and Projects sections */
+.experience-details-container,.experience-details-container1,
+.experience-details-container2 {
+  display: flex;
+  flex: 5;
+  justify-content: 1rem; /* Adjust spacing between the containers */
+  flex-wrap: wrap; /* Allow containers to wrap onto next line if needed */
+  gap: 1rem; 
+  padding: 0.5rem;
+}
+.experience-details-container1 {
+  flex: 1; /* Take up normal space */
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+}
+.experience-details-container2 {
+  flex: 1; /* Take up normal space */
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+.experience-details-container3 {
+  width: 100%; /* Adjust as needed for spacing */
+  margin-top: 0rem;
+
 }
 
 .experience-sub-title {
@@ -357,27 +414,7 @@ section {
   margin-bottom: 1rem; /* Adjust as needed */
 }
 
-.experience-details-container,
-.experience-details-container2 {
-  display: flex;
-  justify-content: 1rem; /* Adjust spacing between the containers */
-  flex-wrap: wrap; /* Allow containers to wrap onto next line if needed */
-}
-.experience-details-container {
-  flex: 6; /* Take up twice the space */
-  margin-top: 0rem;
-}
-
-.experience-details-container2 {
-  flex: 1; /* Take up normal space */
-  margin-top: 0rem;
-}
-.experience-details-container3 {
-  width: 100%; /* Adjust as needed for spacing */
-  margin-top: 0rem;
-}
-
-.details-container,
+.details-container1,
 .details-container2 {
   padding: 0.1rem;
   background: white;
@@ -392,8 +429,9 @@ section {
   border-radius: 1rem;
   border: 0.1rem solid rgb(163, 163, 163);
   text-align: center;
+  margin-top: 1rem;
 }
-.details-container {
+.details-container1 {
   flex: 3; /* Set the width of the first container to be twice the width of the second container */
 }
 
@@ -436,7 +474,7 @@ section {
 /* PROJECTS SECTION */
 #projects {
   position: relative;
-  margin-top: 4rem; /* Add top margin to create space between Projects and Experience sections */
+  margin-top: 7rem; /* Add top margin to create space between Projects and Experience sections */
 }
 
 /* PROJECTS SECTION */
@@ -445,15 +483,27 @@ section {
   position: relative;
   padding-top: 1vh;
   height: auto; /* Change the height to auto */
-  margin: 10rem 10rem 0; /* Add margin to the top and bottom */
+  margin: 17rem 10rem 0; /* Add margin to the top and bottom */
   box-sizing: border-box;
   min-height: fit-content;
 }
 
-
+#experience-projects-container4 {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1rem; 
+  margin-bottom: 0rem; /* Add bottom margin to create space between Experience and Projects sections */
+}
+.experience-details-container4 {
+  display: flex;
+  flex: 5;
+  justify-content: 1rem; /* Adjust spacing between the containers */
+  flex-wrap: wrap; /* Allow containers to wrap onto next line if needed */
+  gap: 1rem; 
+}
 
 .color-container {
-  border-color: rgb(163, 163, 163);
+  border-color: rgb(165, 153, 153);
   background: rgb(250, 250, 250);
 }
 
@@ -511,11 +561,19 @@ section {
   margin-left: 0;
 }
 
-.article-container {
+.article-container1 {
   width: 100%; /* Set the width to 100% */
   height: 400px; /* Set a fixed height for the container */
   overflow: hidden; /* Hide any overflow */
 } 
+.experience-sub-title,
+.experience-sub-title1,
+.experience-sub-title2,
+.experience-sub-title4,
+.experience-sub-title5 {
+  height: 6rem;
+
+}
 
 /* CONTACT */
 
@@ -524,7 +582,7 @@ section {
   justify-content: center;
   flex-direction: column;
   height: 70vh;
-  margin-top: 20rem; /* Add margin to the top */
+  margin-top: 60rem; /* Add margin to the top */
 }
 
 .contact-info-upper-container {
@@ -534,7 +592,7 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   background: #fafafa; /* Fix the background value */
-  margin: 3rem auto;
+  margin: auto;
   padding: 1.5rem;
   position: relative; /* Add this line */
   flex-basis: 10%; /* Adjust the width of each article as needed */
@@ -550,7 +608,7 @@ section {
   align-items: center; /* Center items horizontally */
   text-align: center; /* Center text horizontally */
   width: 10rem; /* Adjust as needed */
-  padding: 1rem;
+  padding: 0rem;
 }
 
 
@@ -601,4 +659,9 @@ footer {
 
 footer p {
   text-align: center;
+}
+.nav-links-container
+{
+  height: 20vh;
+  margin-top: 10rem;
 }

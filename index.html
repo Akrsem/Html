@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
+    <video autoplay muted loop id="bg-video">
+      <source src="./assets/12.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <nav id="desktop-nav">
       <div class="logo">Akriti Machhan</div>
       <div>
@@ -38,7 +42,7 @@
     </nav>
     <section id="profile">
       <div class="section__pic-container">
-        <img src="./assets/akuphoto.png" alt="Aku profile picture" />
+        <img src="./assets/png.png" alt="Aku profile picture" />
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
@@ -62,7 +66,6 @@
         </div>
       </div>
     </section>
-    
     <script>
       // Define the roles
       const roles = [
@@ -101,19 +104,47 @@
     
       // Start typing effect
       setInterval(nextLetter, 150); // Change letter every 150 milliseconds
+      
+      // Script for video resizing
+      const video = document.getElementById('bg-video');
+
+      function resizeVideo() {
+        const aspectRatio = 16 / 9; // Adjust this ratio if needed
+        let videoWidth = window.innerWidth;
+        let videoHeight = window.innerHeight;
+
+        const windowAspectRatio = window.innerWidth / window.innerHeight;
+
+        if (windowAspectRatio > aspectRatio) {
+          videoWidth = window.innerWidth;
+          videoHeight = videoWidth / aspectRatio;
+        } else {
+          videoHeight = window.innerHeight;
+          videoWidth = videoHeight * aspectRatio;
+        }
+
+        video.style.width = videoWidth + 'px';
+        video.style.height = videoHeight + 'px';
+      }
+
+      // Resize the video when the window is resized
+      window.addEventListener('resize', resizeVideo);
+      resizeVideo(); // Initial resize
+      video.playbackRate = 0.3; // Half the normal speed
     </script>
+    
     
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
       <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/Photo.jpg"
+          <div class="section__pic-container1">
+           <img
+            src="./assets/Media.jpg"
             alt="Profile picture"
             class="about-pic"
-          />
-        </div>
+           />
+          </div>
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
@@ -159,9 +190,11 @@
           </div>
           <div class="text-container">
             <p>
-              I am a dedicated and passionate project developer with a strong background in construction and real estate management. Throughout my career, I have demonstrated expertise in coordinating and managing complex projects, from acquisition to completion, while ensuring compliance with industry standards and regulations.
-              My experience includes working with multidisciplinary teams, collaborating with professionals such as architects, engineers, contractors, and subcontractors. I am adept at implementing risk management strategies to overcome obstacles and ensure project progress.
-              Driven by a desire for continuous improvement, I am committed to staying abreast of industry trends and technologies. I thrive in dynamic environments where I can apply my problem-solving skills and analytical mindset to deliver innovative solutions.
+              As a project developer with years of experience in the construction and real estate industries, I've gained valuable insights into managing projects from inception to completion. Throughout my career, I've worked closely with diverse teams, including architects, engineers, contractors, and subcontractors, ensuring that projects are executed smoothly and meet industry standards.
+              <p>Though I'm still early in my career, I've successfully implemented risk management strategies that have helped me anticipate challenges and keep projects on track. My ability to analyze situations and come up with innovative solutions has not only resolved issues but also improved operational efficiency.
+              <p>I'm passionate about staying updated with the latest industry trends and technological advancements. This drive for continuous learning helps me thrive in fast-paced environments where I can apply my knowledge to overcome obstacles and deliver high-quality results.
+              <p>Effective collaboration and clear communication have always been key to my approach. Building strong relationships with stakeholders and coordinating with various parties to align on goals have been integral to my success. Even with limited experience compared to some, I bring a fresh perspective, enthusiasm, and a strong willingness to learn and adapt.
+              <p>I'm confident in my ability to quickly adapt to new challenges and consistently deliver outstanding results through hard work and dedication. With a solid foundation and a commitment to excellence, I'm excited to continue growing professionally and contribute to the success of future projects, leveraging my skills to drive innovation and exceed expectations.
             </p>
           </div>
         </div>
@@ -176,9 +209,9 @@
     <section id="experience">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
+      <div class="about-containers"></div>
+       <div class="experience-details-container">
+          <div class="details-container1">
             <h2 class="experience-sub-title1">Technical skills</h2>
             <div class="article-container">
               <article>
@@ -358,12 +391,11 @@
                 </div>
               </article>
             </div>
-          </div>
-        
-      <div class="experience-details-container2">
-        <div class="about-containers">
+          </div>  
+            
+        <div class="experience-details-container1">      
           <div class="details-container2">
-            <h2 class="experience-sub-title2">Management Skills</h2>
+            <h2 class="experience-sub-title1">Management Skills</h2>
             <div class="article-container2">
               <article>
                 <img
@@ -400,10 +432,6 @@
               </article>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="experience-details-container2">
-        <div class="about-containers">
           <div class="details-container2">
             <h2 class="experience-sub-title2">Languages</h2>
             <div class="article-container2">
@@ -444,14 +472,14 @@
           </div>
         </div>
       </div>
-    </div> 
-    <div class="experience-details-container3">
+      </div>
+      <div class="experience-details-container3">
       <div class="details-container3">
         <h2 class="experience-sub-title2">Other Skills or Certifications</h2>
         <ul class="skills-list">
           <p>Strong Communication Skills<p>
           <p>Good Knowledge of HOAI; VOB/B<p>
-          <p>Proficient in Building Information Modeling (BIM)<p>
+          <p>Moderate Proficient in Building Information Modeling (BIM)<p>
           <p>Data Analytics Bootcamp Certificated<p>
           <p>Problem Solving<p>
           <p>Temawork<p>
@@ -465,13 +493,13 @@
         onclick="location.href='./#projects'"
       />
     </section>
-    <section id="projects"style="height: 200vh;">
+     <section id="projects"style="height: 200vh;">
         <p class="section__text__p1">Browse My Recent</p>
         <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
+        <div class="experience-details-container4">
             <div class="about-containers">
                 <div class="details-container color-container">
-                   <div class="article-container">
+                   <div class="article-container1">
                        <img src="./assets/Schwerin.jpg" alt="Project 1" class="project-img" />
                     </div>
                     <h2 class="experience-sub-title4">Urban Development in Schwerin</h2>
@@ -484,7 +512,7 @@
 
                 </div>
                 <div class="details-container color-container">
-                  <div class="article-container">
+                  <div class="article-container1">
                       <img src="./assets/köpnick.jpg" alt="Project 1" class="project-img" />
                   </div>
                   <h2 class="experience-sub-title4">Design and Planning of Residential Developments</h2>
@@ -497,11 +525,12 @@
                   
               </div>
             </div>
+            
         </div>
-        <div class="experience-details-container">
+        <div class="experience-details-container4">
           <div class="about-containers">
               <div class="details-container color-container">
-                 <div class="article-container">
+                 <div class="article-container1">
                     <img src="./assets/Module.jpg" alt="Project 1" class="project-img" />
                   </div>
                   <h2 class="experience-sub-title4">Modular Housing Consultants</h2>
@@ -513,20 +542,46 @@
 
               </div>
               <div class="details-container color-container">
-                <div class="article-container">
+                <div class="article-container1">
                     <img src="./assets/Anaylsis.png" alt="Project 1" class="project-img" />
                 </div>
-                <h2 class="experience-sub-title4">Design and Planning of Residential Developments</h2>
+                <h2 class="experience-sub-title4">Market Studies and Project Feasibility</h2>
                 <div class="text-container">
                     <p>
-                        Nestled in Berlin-Köpenick, the Waldstrasse residential project spans 2,042 m² of land, offering around 700 m² of living spaces and a total gross floor area (BGF) of approximately 835 m². Comprising five detached town villas, each blending small-town charm with urban convenience, this development redefines modern urban living.
+                      Throughout  projects, I conduct market studies at various stages to inform decisions and strategies. Initially, I oversee legal, financial, and operational assessments to ensure thorough feasibility. As we define the project, attract investors, approach banks for financing, or plan for sale, I coordinate detailed market studies and location analysis. This involves examining rental rates, property prices, neighborhood amenities, , demographic trends etc. Using tools like Excel, Power BI, or Tableau, I streamline our data analysis and visualization efforts. Collaboration with my team remains central to ensuring a successful project from conception to implementation.
                     </p> 
-                    <p>Playing a pivotal role in the project, I spearheaded initiatives such as due diligence, location feasibility studies, and market value analysis. Additionally, I ensured seamless coordination with stakeholders and regulatory bodies to maintain compliance with standards and regulations.</p>
-                </div>
+              </div>
                 
             </div>
           </div>
       </div>
+      <div class="experience-details-container4">
+        <div class="about-containers">
+            <div class="details-container color-container">
+               <div class="article-container1">
+                  <img src="./assets/Tähti.jpg" alt="Project 1" class="project-img" />
+                </div>
+                <h2 class="experience-sub-title4">As-Oy-Tietolan-Tähti, Finland</h2>
+                <div class="text-container">
+                    <p>Tietolan-Tähti was a distinguished precast construction project located in Finland, completed in 2018. This 4-storey building houses 21 luxurious apartments, each featuring a private glazed balcony. Additionally, the building offers 23 parking spaces, including 8 under a roof for added convenience. Our company, ICE, was entrusted with the modeling of reinforcement in precast elements and the preparation of element drawings. I played a key role in the details and management, collaborating closely with seasoned detailers to craft precise precast detail drawings using AutoCAD. Working hand-in-hand with senior structural engineers on the design, we effectively showcased the power of teamwork, successfully bringing this project to life.
+                       <p>
+                </div>
+
+            </div>
+            <div class="details-container color-container">
+              <div class="article-container1">
+                  <img src="./assets/Students.jpg" alt="Project 1" class="project-img" />
+              </div>
+              <h2 class="experience-sub-title4">StudentApartments-Kumpula Campus, Finland</h2>
+              <div class="text-container">
+                  <p>The Student Apartments project at Helsinki University's Kumpula Campus stands as a significant addition to the educational community, providing over 200 student apartments in a generous 12,200 sq.m area. The design thoughtfully incorporates communal spaces.
+                    At ICE, we embraced the challenge of precast detailing and preparing precast shop drawings for this extensive project. Using Tekla Structures, we maintained a focus on accuracy and efficiency throughout the design and detailing stages, ensuring that the project met the highest standards of quality and functionality.
+                     </p> 
+            </div>
+              
+          </div>
+        </div>
+    </div>
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
@@ -534,7 +589,7 @@
         onclick="location.href='./#contact'"
       /> 
     </section>
-    <section id="contact">
+     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
@@ -556,6 +611,7 @@
               src="./assets/email.png"
               alt="Email icon"
               class="icon contact-icon"
+              onclick="location.href='mailto:akriti.machhan1009@gmail.com';"
             />
             <div class="email-info"> <!-- Changed class name to match -->
               <p><a href="mailto:akriti.machhan1009@gmail.com">Email</a></p> <!-- Added 'mailto:' -->
@@ -568,6 +624,7 @@
               src="./assets/linkedin.png"
               alt="Linkedn icon"
               class="icon contact-icon"
+              onclick="location.href='https://www.linkedin.com/in/AkritiMachhan'"
             />
             <div class="linkedin-info">
               <p><a href="https://www.linkedin.com/in/AkritiMachhan">LinkedIn</a></p>
@@ -576,8 +633,7 @@
         </div>
       </div>
     </section>
-    </section>
-    <footer>
+     <footer>
       <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
@@ -588,8 +644,8 @@
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2024 Akriti Machhan. All Rights Reserved.</p>
-    </footer>
+       <p>Copyright &#169; 2024 Akriti Machhan. All Rights Reserved.</p>
+     </footer>
     <script src="script.js"></script>
   </body>
 </html>
