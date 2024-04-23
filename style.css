@@ -311,6 +311,7 @@ section {
 #about {
   position: relative;
   background-color: hsla(0, 0%, 96%, 0.907); 
+  height: auto;
 }
 .section-container {
   gap: 4rem;
@@ -361,7 +362,7 @@ section {
 /* EXPERIENCE SECTION */
 #experience {
   position: relative;
-  margin-top: 7rem; /* Add bottom margin to create space between Experience and Projects sections */
+  margin-top: 20rem; /* Add bottom margin to create space between Experience and Projects sections */
 }
 /* EXPERIENCE AND PROJECTS SECTION CONTAINER */
 #experience-projects-container {
@@ -445,7 +446,7 @@ section {
   display: flex;
   text-align: initial;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
   justify-content: center; /* Center the articles horizontally */
 }
 
@@ -472,18 +473,13 @@ section {
 }
 
 /* PROJECTS SECTION */
-#projects {
-  position: relative;
-  margin-top: 7rem; /* Add top margin to create space between Projects and Experience sections */
-}
 
-/* PROJECTS SECTION */
 
 #projects {
   position: relative;
   padding-top: 1vh;
   height: auto; /* Change the height to auto */
-  margin: 17rem 10rem 0; /* Add margin to the top and bottom */
+  margin: 35rem 10rem 0; /* Add margin to the top and bottom */
   box-sizing: border-box;
   min-height: fit-content;
 }
@@ -582,7 +578,7 @@ section {
   justify-content: center;
   flex-direction: column;
   height: 70vh;
-  margin-top: 60rem; /* Add margin to the top */
+  margin-top: 100rem; /* Add margin to the top */
 }
 
 .contact-info-upper-container {

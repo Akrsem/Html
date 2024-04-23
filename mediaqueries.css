@@ -162,11 +162,19 @@
   .details-container3 {
    margin: 1rem 1rem 1rem;
   }
+  
 
   .article-container,.article-container2{
     display: flex;  
+    flex-direction: column-reverse;
     flex-wrap: wrap          /* Use Flexbox */
   }
+  .article-container{
+    display: flex;  
+    flex-direction: column-reverse;
+    flex-wrap: wrap          /* Use Flexbox */
+  }
+  
 
 #projects{
     display: flex;
@@ -256,6 +264,7 @@
     margin-bottom: 2rem;
     height: 1rem;
   }
+
 
   .details-container,
   .details-container2,
@@ -409,6 +418,7 @@ footer p {
     margin: 0.5rem 0.5rem 1rem ;
     margin-bottom: 1rem;
    }
+   
 #projects{
     display: flex;
     flex-direction: column; /* Stack children vertically */
@@ -521,10 +531,298 @@ footer p {
  
   }
 
-  /* Styles for larger desktop screens */ 
-@media screen and (min-width: 1367px) {
+  @media screen and (max-width: 1366px) and (max-height: 768px)  {
 
-}
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+    nav {
+      display: none;
+      justify-content: space-between;
+      height: 15vh;
+    }
+    .logo {
+      display: none;
+      font-size: 2.5rem;
+    }
+    #hamburger-nav {
+      display: flex;
+      justify-content: right;
+      margin-bottom: 5rem;
+      margin-right: 1rem;
+    }
+    .hamburger-icon {
+      height: 20px;
+      width: 25px;
+    }
+    .menu-links {
+      top: 120%;
+    }
+    .menu-links a {
+      font-size: 18px;
+     }
+    section {
+      margin: 0 1rem;
+      height: auto;
+    }
+  #profile {
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      align-items: center;
+     }
+     .section__pic-container{
+      display: flex;
+      justify-content: center;
+      height: 70%;
+      width: auto;
+      width: 100vw; /* Adjust width as needed */
+      height: 100vw; /* Adjust height as needed */
+      max-width: 200px; /* Maximum width to prevent it from getting too large on bigger screens */
+      max-height: 180px; /* Maximum height to prevent it from getting too large on bigger screens */
+      overflow: hidden; /* This will hide any overflow outside the circle */
+      border-radius: 70%; /* This will create a circle */
+      margin-bottom: 10px; /* Adjust this negative margin to position it above the other container */
+      margin-top: -100px;
+     }
+     .section__pic-container img {
+      border-radius: 50%;         /* Make the image round */
+      width: 70%;                /* Ensure the image takes up the full width of its container */
+      height: 100%;               /* Ensure the image takes up the full height of its container */
+      object-fit: cover; 
+      background-color: hwb(0 100% 0% / 0.808); /* Ensure transparency */
+     }
+     .title{
+      font-size: 2rem;
+      text-align: wrap;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+     .role{
+      font-size: 2rem;
+      text-align: wrap;
+      margin-bottom: 1rem;
+      margin-top: 0rem;
+     }
+     .btn {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+     }
+  
+     .role {
+      font-size: 20px;
+     }
+   
+  #about {
+      display: flex;
+      flex-direction: column; /* Stack children vertically */
+      align-items: center; /* Center align items horizontally */
+      text-align: center; /* Center align text */   
+     }
+     .section-container {
+      display: block;   
+      flex-wrap: wrap; /* Allow the containers to wrap onto the next line if needed */
+     }
+     .text-container p {
+     text-align: justify;
+     }
+     .section__pic-container1 {
+      display: inline-block;
+      justify-content: center; /* Center the content horizontally */
+      align-items: center; /* Center the content vertically */
+      width: 80vw; /* Adjust width as needed */
+      height: 80vw; /* Adjust height as needed */
+      max-width: 150px; /* Maximum width to prevent it from getting too large on bigger screens */
+      max-height: 180px; /* Maximum height to prevent it from getting too large on bigger screens */
+      overflow: hidden; /* This will hide any overflow outside the circle */
+      border-radius: 20%; /* This will create a circle */
+      margin-bottom: -20px; /* Adjust this negative margin to position it above the other container */
+      margin-top: -160px;
+     }
+     /* Other styles */
+     .about-pic {
+      width: 100%; /* Make the image fill its container */
+      height: auto; /* Maintain aspect ratio */
+      margin-left: 0rem;
+     }
+     .details-container {
+      font-size: 1rem;
+      padding: 0rem;
+     }
+     .details-container p{
+      font-size: 0.7rem;
+     }
+  #experience{
+    display: none;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center align items horizontally */
+    text-align: center; /* Center align text */
+    margin-top: -30rem;   
+   }
+   .article-container,.article-container2{
+     display: flex;
+     flex-basis: auto;
+     text-align: justify;
+     font-size: 0.7rem;
+     flex-wrap: wrap;
+     gap: 0rem;
+     justify-content: center; /* Center the articles horizontally */
+     flex-direction: row;
+    }
+  
+   .experience-details-container1 {
+    display: flex;  
+    flex-direction: row;          /* Use Flexbox */
+    justify-content: space-between; /* Space items evenly along the main axis */
+    flex-wrap: wrap;          /* Allow items to wrap onto the next line if needed */
+    flex: 1;
+    margin-left: -1rem;
+  }
+   .details-container1, .details-container2, .details-container3 {
+      display: flex;            /* Use Flexbox */
+      flex-shrink: inherit;
+      flex-direction: column;
+      align-content: row;
+      flex:1;
+    }
+    .details-container3 {
+     margin: 1rem 1rem 1rem;
+    }
+    
+  
+    .article-container,.article-container2{
+      display: flex;  
+      flex-direction: column-reverse;
+      flex-wrap: wrap          /* Use Flexbox */
+    }
+    .article-container{
+      display: flex;  
+      flex-direction: column-reverse;
+      flex-wrap: wrap          /* Use Flexbox */
+    }
+    
+  
+  #projects{
+      display: flex;
+      flex-direction: column; /* Stack children vertically */
+      align-items: center; /* Center align items horizontally */
+      text-align: center; /* Center align text */   
+     }
+  .about-containers{
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: top; /* Center align items horizontally */
+    text-align: justify; /* Center align text */   
+    border-radius: 0rem;
+     }
+   .icon.arrow {
+    display: none;
+      opacity: 0.5; /* Adjust opacity as needed */
+      cursor: default; /* Change cursor to default (not pointer) */
+    } 
+    .details-container {
+      display: block;            /* Use Flexbox */
+      justify-content: space-between;
+      flex-direction: row;
+      margin-top: 1rem;
+      margin-bottom: -2rem;
+    } 
+  #contact {
+      height: auto;
+      margin-top: 210rem;
+      margin-bottom: 2rem; /* Adjust margin-bottom to create space above the contact section */
+      font-size: 0.7rem;
+    }
+  
+  
+    .contact-info-upper-container {
+      flex-direction: row;
+      gap: 1rem;
+      padding-top: 0rem;
+      padding-bottom: 0rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  
+    .contact-info-container {
+  
+      width: 4rem;
+      padding: 0.5rem;
+    }
+  
+    .contact-info-container img {
+      width: 30px;
+    }
+  
+    footer {
+      height: 10vh;
+    }
+  
+    .nav-links-container {
+      height: 15vh;
+      margin-top: 5rem;
+    }
+  
+    #about,
+    #experience,
+    #projects {
+      margin: 5rem 1rem;
+    }
+  
+    .article-container2,.details-container .color-container {
+      height: auto;
+      margin-bottom: 0rem;
+      margin-top: 0rem;
+    }
+    .article-container1 {
+      width: auto; /* Set the width to 100% */
+      height: 180px; /* Set a fixed height for the container */
+      overflow: hidden; /* Hide any overflow */
+      padding: 0.5rem;
+    }
+  
+    .experience-sub-title,
+    .experience-sub-title1,
+    .experience-sub-title2,
+    .experience-sub-title4,
+    .experience-sub-title5 {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      height: 1rem;
+    }
+  
+  
+    .details-container,
+    .details-container2,
+   {
+      padding: 0.5rem;
+      font-size: 0.1rem;
+    }
+    .details-container3 {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    #projects {
+      display: flex;
+      margin-top: 4rem;
+      margin-bottom: 10rem; /* Increase margin-bottom to create more space */
+    }
+    .section {
+      margin: 0 1rem;
+      height: 2000vh;
+    }
+  .text-container{
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  footer p {
+    text-align: center;
+    font-size: 0.7rem;
+  }
+  }
 
 
 
